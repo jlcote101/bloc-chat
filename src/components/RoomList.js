@@ -43,9 +43,8 @@ class RoomList extends Component {
           {this.state.rooms.map((room, index) =>
             <a
               key={ room.key }
-              onClick={(key, name) => this.props.selectActiveRoom(room.key, room.name)}
-              href= "#"
-            >
+              onClick={(key) => this.props.selectActiveRoom(room.key)}
+              href= "#">
               <h4>{room.name}</h4>
             </a>
             )}

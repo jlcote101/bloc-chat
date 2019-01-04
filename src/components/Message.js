@@ -8,7 +8,7 @@ class Message extends Component {
       input: ''
     };
 
-    this.messagesRef = this.props.firebase.database().ref('messages');
+    this.messagesRef = this.props.firebase.database().ref('Messages');
   }
 
   handleChange(event){
