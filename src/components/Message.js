@@ -20,7 +20,24 @@ class Message extends Component {
     const newMessage = this.state.input;
     let timeStamp = new Date();
     timeStamp = timeStamp.toLocaleTimeString();
-    console.log(newMessage);
+
+      if(this.props.user !== null){
+        this.messagesRef.push({
+          content: newMessage,
+          roomId: this.props.activeRoom,
+          username: this.props.user.displayName,
+          sentAt: timeStamp
+        });
+        console.log("user is not null");
+      } else {
+        this.messagesRef.push({
+          content: newMessage,
+          roomId: this.props.activeRoom,
+          username: 'Guest',
+          sentAt: timeStamp
+        });
+        console.log("user is null")
+      }
 
     const emptyString = '';
     this.setState({ input: emptyString})
