@@ -37,6 +37,7 @@ class RoomList extends Component {
     this.setState({newRoomName: emptyString});
   }
 
+
   render () {
     return (
       <div>
@@ -56,6 +57,7 @@ class RoomList extends Component {
             </a>
             )}
         </ul>
+
         <form onSubmit={ (event) => this.createRoom(event)}>
           <input
             type='text'

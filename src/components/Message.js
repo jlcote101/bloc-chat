@@ -27,7 +27,7 @@ class Message extends Component {
           roomId: this.props.activeRoom,
           username: this.props.user.displayName,
           sentAt: timeStamp
-        });
+        }); 
         console.log("user is not null");
       } else {
         this.messagesRef.push({
