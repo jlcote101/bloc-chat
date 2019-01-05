@@ -28,6 +28,8 @@ class MessageList extends Component {
         </li>
       );
     }else{
+      console.log(`${message.roomId} does not match the activeRoom's ID:
+      ${this.props.activeRoom}`)
       return
     }
   }
