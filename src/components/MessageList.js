@@ -23,13 +23,11 @@ class MessageList extends Component {
   showRoomMessage(message, index){
     if (message.roomId === this.props.activeRoom){
       return (
-        <li key={index} className="message">
-          <p>{message.content}</p>
-        </li>
+         <li key={index} className="message">
+          {message.content}
+         </li>
       );
     }else{
-      console.log(`${message.roomId} does not match the activeRoom's ID:
-      ${this.props.activeRoom}`)
       return
     }
   }
@@ -48,6 +46,7 @@ class MessageList extends Component {
         <Message
           firebase={this.props.firebase}
           activeRoom={this.props.activeRoom}
+          user={this.props.user}
         />
       </div>
 

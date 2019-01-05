@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import User from './User';
 
 class RoomList extends Component {
   constructor(props){
@@ -39,6 +40,12 @@ class RoomList extends Component {
   render () {
     return (
       <div>
+        <User
+          firebase={this.props.firebase}
+          user={this.props.user}
+          userName={this.props.userName}
+          setUser={(user) => this.props.setUser(user)}
+        />
         <ul id="room-list">
           {this.state.rooms.map((room, index) =>
             <a
