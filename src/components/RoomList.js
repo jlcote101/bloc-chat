@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import User from './User';
+import 'bootstrap';
+import './RoomList.css';
 
 class RoomList extends Component {
   constructor(props){
@@ -37,6 +39,11 @@ class RoomList extends Component {
     this.setState({newRoomName: emptyString});
   }
 
+  deleteRoom(room){
+    this.roomsRef.child(room.key).remove();
+    this.setState({rooms: this.state.rooms.filter((item) => item.key !== room.key)
+    });
+  }
 
   render () {
     return (
@@ -49,12 +56,17 @@ class RoomList extends Component {
         />
         <ul id="room-list">
           {this.state.rooms.map((room, index) =>
+            <div>
             <a
               key={ room.key }
               onClick={(key) => this.props.selectActiveRoom(room.key)}
               href= "#">
               <h4>{room.name}</h4>
             </a>
+            <button onClick={ () => this.deleteRoom(room)}>
+            <span>x</span>
+            </button>
+            </div>
             )}
         </ul>
 

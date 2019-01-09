@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './User.css';
 
 class User extends Component {
   constructor(props){
@@ -30,12 +31,15 @@ class User extends Component {
 
   render () {
     return (
-      <div>
-        <h3>{this.displayUser(this.props.user)}</h3>
-        <button onClick={ () => this.signIn() }>Sign In</button>
-        <button onClick={ () => this.signOut() }>Sign Out</button>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-4">
+            <h3>{this.displayUser(this.props.user)}</h3>
+            <button onClick={ () => this.signIn() }>Sign In</button>
+            <button onClick={ () => this.signOut() }>Sign Out</button>
+          </div>
+        </div>
       </div>
-
     )
   }
 }

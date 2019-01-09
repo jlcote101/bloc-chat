@@ -4,6 +4,9 @@ import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
 import User from './components/User';
+import 'bootstrap';
+
+
 
 
   var config = {
@@ -17,7 +20,9 @@ import User from './components/User';
   firebase.initializeApp(config);
 
 
+
 class App extends Component {
+
   constructor(){
     super();
 
@@ -37,10 +42,22 @@ class App extends Component {
     this.setState({user: user});
   }
 
+
   render() {
     return (
-      <div className="App">
-        <h1 className="App-Title">Bloc Chat</h1>
+      <div>
+          <div className="jumbotron">
+            <p className="jen"> . </p>
+            <h1 className='bloc'>Welcome to Bloc Chat</h1>
+              <p className="bottom-text">A platform to connect anyone, anywhere.</p>
+              <p className="jen"> . </p>
+          </div>
+
+
+
+
+
+      <div className="app">
         <RoomList
           firebase={firebase}
           activeRoom={this.state.activeRoom}
@@ -54,7 +71,8 @@ class App extends Component {
           selectActiveRoom={this.state.activeRoomTitle}
           user={this.state.user}
           />
-        </div>
+          </div>
+          </div>
     );
   }
 }
